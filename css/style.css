@@ -1,0 +1,547 @@
+/* General Styles */
+body {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 300; /* フォントを細くする */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em; /* テーマのh3に合わせる */
+    margin-bottom: 40px;
+    color: #2a52be; /* 濃い青に統一 */
+    position: relative;
+    display: inline-block;
+    font-weight: 300; /* 細くする */
+    letter-spacing: 0.1em; /* 文字間を広げる */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* h2 の下からの位置 */
+    transform: translateX(-50%);
+    width: 300px; /* 線の長さをさらに長くする */
+    height: 1px; /* 線を細く */
+    background-color: #2a52be; /* 濃い青 */
+}
+
+.hero-content h2::after {
+    display: none; /* ヒーローセクションのh2には下線不要 */
+}
+
+/* Header Sub Content (ヘッダーロゴ以下のコンテンツ) */
+.header-sub-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+.content-block {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left; /* 左寄せ */
+}
+
+.content-block h3 {
+    font-size: 1.8em;
+    color: #2a52be; /* 濃い青 */
+    margin-bottom: 15px;
+    text-align: center; /* 中央寄せ */
+    font-weight: 300; /* 細くする */
+    letter-spacing: 0.1em; /* 文字間を広げる */
+    position: relative; /* ::after の基準 */
+}
+
+.content-block h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* h3 の下からの位置 */
+    transform: translateX(-50%);
+    width: 250px; /* 線の長さをさらに長く */
+    height: 1px; /* 線を細く */
+    background-color: #2a52be; /* 濃い青 */
+}
+
+.content-block ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* 横並び */
+    justify-content: center; /* 中央寄せ */
+    gap: 20px; /* 間隔 */
+    margin-top: 30px; /* 上マージンをさらに増やす */
+}
+
+.content-block ul li::before {
+    content: none; /* Bullet point を削除 */
+}
+
+.content-block ul li {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 2.5; /* 行間を広げる */
+}
+
+/* About Section */
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Story Section */
+.story-section {
+    background-color: #f0f0f0;
+}
+
+.story-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.1em;
+    color: #555;
+    text-align: left; /* 左寄せ */
+}
+
+/* Composition and Color Section */
+.composition-color-section {
+    background-color: #edefe5;
+}
+
+.composition-color-section .composition-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.composition-color-section .composition-item,
+.composition-color-section .color-item {
+    max-width: 800px;
+    width: 100%;
+}
+
+.composition-color-section .composition-item h3,
+.composition-color-section .color-item h3 {
+    font-size: 1.8em;
+    color: #2a52be;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+.composition-color-section .composition-item h3::after,
+.composition-color-section .color-item h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 1px;
+    background-color: #2a52be;
+}
+
+.composition-color-section .composition-item p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+    margin: 0 auto;
+    display: table;
+}
+
+.composition-color-section .color-palette {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.composition-color-section .color-chip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.composition-color-section .color-swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+}
+
+.composition-color-section .color-chip p {
+    margin: 0;
+    font-size: 1em;
+    color: #555;
+    text-align: left;
+}
+
+/* Art Display Section */
+.art-display-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.art-display-section h2::after {
+    display: none !important;
+}
+
+.art-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.art-grid-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.art-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.art-grid-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+#lightbox-caption {
+    margin-top: 20px;
+    color: #ccc;
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 80%;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 30px 0 80px 0; /* 上部の余白を詰める */
+    text-align: center;
+}
+
+.contact-section .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-section .company-logo {
+    width: auto;
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 0px;
+}
+
+.contact-section .company-certification {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    width: 250px;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.contact-section .company-name,
+.contact-section .company-address,
+.contact-section .company-tel,
+.contact-section .company-email {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 0;
+    line-height: 0.7;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+footer .footer-note {
+    font-size: 0.8em;
+    margin-top: 5px;
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .header-sub-content {
+        flex-direction: column;
+    }
+
+    .content-block {
+        padding: 20px;
+    }
+
+    .composition-color-section .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-slide {
+        padding: 30px 15px;
+    }
+
+    .carousel-slide h3 {
+        font-size: 1.5em;
+    }
+
+    .carousel-slide p {
+        font-size: 1em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .carousel-nav button {
+    background-color: #2a52be;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-nav button:hover {
+    background-color: #1a3a9a;
+}
+}
+
+/* Header/Hero Section */
+.hero {
+    background-image: url('../images/hero-bg-new.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Text color for hero section */
+    text-align: center;
+    padding: 100px 20px;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* For overlay if needed */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 0;
+}
+
+.hero-content {
+    z-index: 1; /* Ensure content is above background */
+    color: white; /* Ensure text is white */
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 0px; /* Reduced margin */
+    font-weight: 700;
+    letter-spacing: 0.2em; /* Increased letter spacing */
+    color: white; /* Ensure h1 is white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-top: 10px; /* Reduced margin */
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: white; /* Ensure h2 is white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
+}
+
+/* New navigation buttons */
+.nav-buttons {
+    position: static; /* Remove absolute positioning */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    display: flex;
+    flex-direction: column; /* Arrange vertically */
+    gap: 10px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    align-items: center; /* Center buttons horizontally */
+    margin-top: 20px; /* Space below h2 */
+}
+
+.nav-button {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.35); /* More transparent white */
+    color: #2a52be; /* Blue text */
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 20px; /* More rounded for stylish look */
+    font-size: 0.9em;
+    font-weight: bold; /* Make text bold */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border: none; /* Remove border */
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.55); /* More transparent white on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Footer Contact Button */
+.contact-section .btn {
+    display: inline-block;
+    background-color: #2a52be; /* Dark blue */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    backdrop-filter: none; /* Remove backdrop filter */
+}
+
+.contact-section .btn:hover {
+    background-color: #1a3a9a;
+    transform: translateY(-2px); /* Slight lift on hover */
+}

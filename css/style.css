@@ -351,94 +351,121 @@ footer .footer-note {
     color: #bbb;
 }
 
-/* Responsive Design */
+/* =================================== */
+/*  Responsive Design for Smartphones  */
+/* =================================== */
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 3em;
+
+    /* General Typography & Layout */
+    body {
+        line-height: 1.7;
     }
 
-    .hero-content h2 {
-        font-size: 2em;
+    h2,
+    .content-block h3,
+    .composition-color-section .composition-item h3 {
+        font-size: 1.6em;
+        letter-spacing: 0.05em;
     }
 
-    .hero-content p {
-        font-size: 1.2em;
-    }
-
-    h2 {
-        font-size: 2em;
+    h2::after,
+    .content-block h3::after,
+    .composition-color-section .composition-item h3::after {
+        width: 200px; /* Shorten the underline */
     }
 
     .section {
-        padding: 60px 0;
+        padding: 40px 20px; /* Adjust section padding */
     }
 
-    .header-sub-content {
-        flex-direction: column;
+    /* Hero Section */
+    .hero {
+        padding: 50px 20px;
+        height: auto;
+        min-height: 90vh;
+        background-size: cover !important; /* Revert to cover to fill the area */
+        background-position: 25% bottom !important; /* Shift horizontally to show both faces */
     }
 
-    .content-block {
-        padding: 20px;
-    }
-
-    .composition-color-section .content-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .carousel-slide {
-        padding: 30px 15px;
-    }
-
-    .carousel-slide h3 {
-        font-size: 1.5em;
-    }
-
-    .carousel-slide p {
-        font-size: 1em;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 2.5em;
+        font-size: 12vw !important; /* Further increase title size */
+        letter-spacing: 0.05em !important;
+        white-space: nowrap !important; /* Prevent line breaks */
     }
 
     .hero-content h2 {
-        font-size: 1.8em;
+        font-size: 1.4em !important; /* Proportionally increase subtitle size */
+        letter-spacing: 0.05em;
+        margin-bottom: 40px;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .hero-content p {
+    .nav-button {
+        padding: 12px 25px;
         font-size: 1em;
     }
 
-    h2 {
-        font-size: 1.8em;
+    /* Header Sub Content (Theme) */
+    .header-sub-content {
+        padding: 40px 20px;
     }
 
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+    .content-block ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-top: 25px;
     }
 
-    .carousel-nav button {
-    background-color: #2a52be;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1.2em;
-    border-radius: 5px;
-    margin: 0 10px;
-    transition: background-color 0.3s ease;
-}
+    .content-block ul li {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
 
-.carousel-nav button:hover {
-    background-color: #1a3a9a;
-}
+    /* Story & Composition Section */
+    .story-section p,
+    .composition-color-section .composition-item p {
+        font-size: 1em !important;
+        padding: 0 10px !important;
+        text-align: left !important; /* Ensure left alignment */
+        overflow-wrap: break-word !important; /* Control line breaking */
+        word-wrap: break-word !important; /* Legacy support */
+        word-break: normal !important; /* Use standard line breaking rules */
+    }
+    
+    .composition-color-section .composition-item p {
+        display: block; /* remove display:table */
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 30px 20px 50px 20px;
+    }
+    
+    .contact-section .contact-info {
+        max-width: 100%;
+    }
+    
+    .contact-section .company-name,
+    .contact-section .company-address,
+    .contact-section .company-tel,
+    .contact-section .company-email {
+        line-height: 1.5 !important; /* Ensure line-height is applied */
+        overflow-wrap: break-word !important; /* Robust word wrapping */
+        word-break: normal !important; /* Standard breaking for CJK */
+        white-space: normal !important; /* Ensure no nowrap */
+    }
+    .contact-section .company-certification {
+        line-height: 1.5 !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        white-space: normal !important;
+        width: auto !important; /* Allow natural width for wrapping */
+    }
 }
 
 /* Header/Hero Section */
@@ -494,17 +521,26 @@ footer .footer-note {
 
 /* New navigation buttons */
 .nav-buttons {
-    position: static; /* Remove absolute positioning */
-    bottom: auto;
-    left: auto;
-    transform: none;
     display: flex;
-    flex-direction: column; /* Arrange vertically */
-    gap: 10px; /* Space between buttons */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center; /* Center buttons horizontally */
-    margin-top: 20px; /* Space below h2 */
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments for nav-buttons */
+@media (min-width: 769px) {
+    .nav-buttons {
+        flex-direction: row; /* Horizontal layout on PC */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column; /* Vertical layout on smartphones */
+        gap: 15px;
+    }
 }
 
 .nav-button {

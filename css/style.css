@@ -129,7 +129,7 @@ h2::after {
 }
 
 .original-picture-section img {
-    max-width: 1000px;
+    max-width: 100%; /* Default to 100% of parent for responsiveness */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -495,6 +495,33 @@ footer .footer-note {
         word-break: normal !important;
         white-space: normal !important;
         width: auto !important; /* Allow natural width for wrapping */
+    }
+
+    /* Original Picture Section for Mobile */
+    .original-picture-section {
+        padding: 40px 20px !important; /* Adjust section padding for mobile */
+    }
+
+    .original-picture-container {
+        display: block !important; /* Ensure it takes full width */
+        width: 100% !important; /* Ensure it takes full width */
+        max-width: 100% !important; /* Explicitly limit its max width */
+        margin: 0 auto !important; /* Center the block container */
+        box-sizing: border-box !important;
+    }
+
+    .original-picture-section img {
+        max-width: 100% !important; /* 親要素の幅に合わせる */
+        max-width: 360px !important; /* ただし最大360px */
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .original-picture-description {
+        text-align: right !important; /* Keep text right-aligned as requested */
+        padding-right: 10px !important; /* Add some padding to the right */
     }
 }
 

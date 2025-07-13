@@ -129,7 +129,7 @@ h2::after {
 }
 
 .original-picture-section img {
-    max-width: 100%; /* Default to 100% of parent for responsiveness */
+    max-width: 1000px; /* PC版の原画サイズを1000pxに戻す */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
